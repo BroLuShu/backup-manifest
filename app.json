@@ -1,0 +1,8 @@
+{
+  "id": "backup-manifest",
+  "title": "Backup Manifest",
+  "description": "Манифест SHA-256 и проверка копии",
+  "limit": "Хеш не заменяет резервное копирование",
+  "port": 8824,
+  "vendor": []
+}
