@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {manifest,compare} from '../tool.mjs';
+import test from 'node:test';import assert from 'node:assert/strict';import {manifest,compare} from '../src/js/tool.mjs';
 const f=(name,text)=>({name,size:Buffer.byteLength(text),arrayBuffer:async()=>new TextEncoder().encode(text).buffer});
 test('Detect a damaged copy, missing file, extra file and unchanged bytes',async()=>{const expected=await manifest([f('same','abc'),f('damage','abc'),f('missing','abc')]);const actual=await manifest([f('same','abc'),f('damage','abd'),f('extra','abc')]);assert.deepEqual(compare(expected,actual).map(r=>[r.path,r.status]),[['damage','Изменён'],['extra','Лишний'],['missing','Отсутствует'],['same','Совпадает']]);});
 test('Duplicate paths and malformed manifests are rejected',async()=>{await assert.rejects(manifest([f('a','x'),f('a','y')]),/Повторяется/);assert.throws(()=>compare({version:1,algorithm:'SHA-256',files:[{path:'a',bytes:1,sha256:'bad'}]},{files:[]}),/Некорректная/);});

@@ -1,6 +1,6 @@
 # Backup Manifest
 
-<img src="icon.svg" width="88" alt="Backup Manifest">
+<img src="src/assets/icon.svg" width="88" alt="Backup Manifest">
 
 Манифест SHA-256 и проверка копии. Локальный инструмент 0.1.0, JavaScript / Node.js.
 

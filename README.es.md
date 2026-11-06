@@ -1,6 +1,6 @@
 # Backup Manifest
 
-<img src="icon.svg" width="88" alt="Backup Manifest">
+<img src="src/assets/icon.svg" width="88" alt="Backup Manifest">
 
 Crea un manifiesto SHA-256 y verifica copias seleccionadas. No copia ni elimina archivos.
 
